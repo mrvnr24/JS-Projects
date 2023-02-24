@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            position: absolute;
+            left: 40%;
+            top: 30%;
+            background-color: lavender;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .div2{
+            background-color: rgb(164, 164, 252);
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h5>Vize</h5>
+        <input id="in1">
+        <h5>Final</h5>
+        <input id="in2">
+        <br/>
+        <button onclick="Hesapla()">Hesapla</button>
+        <br/>
+        <div class="div2">
+            <h3 id="puan"></h3>
+            <p id="msg"></p>
+        </div>
+    </div>
+    <script>
+        function Hesapla() {
+            var v = parseInt(document.getElementById("in1").value);
+            var f = parseInt(document.getElementById("in2").value);
+            var h = (v*0.4) + (f*0.6);
+            document.getElementById("puan").innerHTML = h;
+
+            if(h<=20) {
+                document.getElementById("msg").innerHTML = "Kalmak uzeresin";
+            } else if(h<=40) {
+                document.getElementById("msg").innerHTML = "Kalmakla gecmek arasindasin";
+            } else if(h<=80) {
+                document.getElementById("msg").innerHTML = "Gectin ama biraz daha calismalisin";
+            } else {
+                document.getElementById("msg").innerHTML = "Woow, tebrikler!";
+            }
+        }
+    </script>
+</body>
+</html>
